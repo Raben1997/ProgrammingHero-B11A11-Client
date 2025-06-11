@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Header from '../Component/Header/Header';
 import Footer from '../Component/Footer/Footer';
 import { authContext } from '../Provider/AuthProvider';
-import Hero from '../Component/Hero/Hero';
+import Banner from '../Component/Banner/Banner';
 
 const Home = () => {
     const a = useContext(authContext);
@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
             <Header></Header>
-            <Hero></Hero>
+            <Banner></Banner>
             <Footer></Footer>
         </>
     );

@@ -49,5 +49,6 @@ html[data-theme="light"]:root {
 html[data-theme="dark"]:root {
   --blue: #ff6900;
   --orange: #193cb8;
-  --dark_light: #000000;
+  /* --dark_light: #000000; */
+  --dark_light: #ffffff;
 }
