@@ -43,11 +43,15 @@ p {
 }
 html[data-theme="light"]:root {
   --blue: #193cb8;
+  --blue_bg: #e8ecfc;
   --orange: #ff6900;
+  --orange_bg: #fef3ec;
   --dark_light: #ffffff;
 }
 html[data-theme="dark"]:root {
   --blue: #ff6900;
+  --blue_bg: #fef3ec;
+  --orange_bg: #e8ecfc;
   --orange: #193cb8;
   /* --dark_light: #000000; */
   --dark_light: #ffffff;
