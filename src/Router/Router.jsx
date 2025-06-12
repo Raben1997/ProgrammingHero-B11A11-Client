@@ -6,6 +6,9 @@ import AddTutorials from "../Pages/AddTutorials";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import PrivateRouter from "./PrivateRouter";
+import FindTutors from "../Pages/FindTutors";
+import MyTutorials from "../Pages/MyTutorials";
+import MyBookedTutors from "../Pages/MyBookedTutors";
 
 
 
@@ -20,12 +23,24 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '*',
-                element: <NotFound></NotFound>
+                path: '/findtutors',
+                element: <FindTutors></FindTutors>
             },
             {
                 path: '/addtutorials',
                 element: <PrivateRouter><AddTutorials></AddTutorials></PrivateRouter>
+            },
+            {
+                path: '/mytutorials',
+                element: <PrivateRouter><MyTutorials></MyTutorials></PrivateRouter>
+            },
+            {
+                path: '/mybookedtutors',
+                element: <PrivateRouter><MyBookedTutors></MyBookedTutors></PrivateRouter>
+            },
+            {
+                path: '*',
+                element: <NotFound></NotFound>
             },
             {
                 path: '/login',

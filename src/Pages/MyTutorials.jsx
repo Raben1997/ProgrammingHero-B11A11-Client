@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../Component/Header/Header';
 import Footer from '../Component/Footer/Footer';
-import TutorialForm from '../Component/TutorialForm/TutorialForm';
+import MyAddTutorials from '../Component/MyAddTutorials/MyAddTutorials';
 
-const AddTutorials = () => {
+const MyTutorials = () => {
     return (
         <>
             <Header></Header>
-            <TutorialForm></TutorialForm>
+            <MyAddTutorials></MyAddTutorials>
             <Footer></Footer>
         </>
     );
 };
 
-export default AddTutorials;
+export default MyTutorials;

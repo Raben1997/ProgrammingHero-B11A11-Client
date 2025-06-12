@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase.config';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
-import { toast } from 'react-toastify';
 import Loading from '../Component/Loading/Loading';
+import Swal from 'sweetalert2';
 
 
 export const authContextData = createContext();
@@ -15,29 +15,38 @@ const AuthProvider = ({ children }) => {
 
 
     const handleUserSignUp = (name, email, photourl, password) => {
-
-        // console.log(name, email, photourl, password);
-
         if (!/[A-Z]/.test(password)) {
-            toast.error("Password must have at least one uppercase letter.");
+            Swal.fire({
+                icon: "error",
+                title: "Password must have at least one uppercase letter.",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         } else if (!/[a-z]/.test(password)) {
-            toast.error("Password must have at least one lowercase letter.");
+            Swal.fire({
+                icon: "error",
+                title: "Password must have at least one lowercase letter.",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         } else if (password.length < 6) {
-            toast.error("Password must be at least 6 characters long.");
+            Swal.fire({
+                icon: "error",
+                title: "Password must be at least 6 characters long.",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         }
 
         return createUserWithEmailAndPassword(auth, email, password)
-
     }
 
 
     const handleSignIn = (email, password) => {
-
         return signInWithEmailAndPassword(auth, email, password);
-
     }
 
     const handleSignInWithGoogle = () => {
@@ -47,9 +56,7 @@ const AuthProvider = ({ children }) => {
 
 
     const handleSignOut = () => {
-
         return signOut(auth);
-
     }
 
 
@@ -64,7 +71,6 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
@@ -73,7 +79,6 @@ const AuthProvider = ({ children }) => {
         return () => {
             unsubscribe();
         }
-
     }, [])
 
     if (loading) {

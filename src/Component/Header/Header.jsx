@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import MenuLinks from '../MenuLinks/MenuLinks';
 import { CiLight } from 'react-icons/ci';
 import { MdNightlight } from 'react-icons/md';
-import { TbLogin2 } from 'react-icons/tb';
+import { TbLogin2, TbLogout2 } from 'react-icons/tb';
 import { authContextData } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -74,6 +74,7 @@ const Header = () => {
                             </button>
                             {
                                 user ? <>
+                                    <button onClick={handleLogout} className='md:py-2 md:px-6 max-md:w-10 max-md:h-10 max-md:rounded-full bg-[var(--orange)] rounded-4xl font-bold text-[var(--dark_light)] cursor-pointer text-sm sm:text-base leading-relaxed max-md:flex max-md:justify-center max-md:items-center'><TbLogout2 className='inline-block md:mr-2 text-xl' /><span className='max-md:hidden'>Logout</span></button>
                                     <div className="dropdown dropdown-end">
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border-0 shadow-none">
                                             <div className="w-10 rounded-full">
@@ -90,7 +91,7 @@ const Header = () => {
                                         </ul>
                                     </div>
                                 </> : <>
-                                    <Link className='md:py-2 md:px-6 max-md:w-10 max-md:h-10 max-md:rounded-full bg-[var(--orange)] rounded-4xl font-bold text-[var(--dark_light)] cursor-pointer text-sm sm:text-base leading-relaxed max-md:flex max-md:justify-center max-md:items-center' to={"/login"}><TbLogin2 className='inline-block mr-2 text-xl' /><span className='max-md:hidden'>Login</span></Link>
+                                    <Link className='md:py-2 md:px-6 max-md:w-10 max-md:h-10 max-md:rounded-full bg-[var(--orange)] rounded-4xl font-bold text-[var(--dark_light)] cursor-pointer text-sm sm:text-base leading-relaxed max-md:flex max-md:justify-center max-md:items-center' to={"/login"}><TbLogin2  className='inline-block md:mr-2 text-xl' /><span className='max-md:hidden'>Login</span></Link>
                                 </>
                             }
                             <div className="dropdown dropdown-end">

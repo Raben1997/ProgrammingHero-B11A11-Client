@@ -1,16 +1,15 @@
 import React from 'react';
 import Header from '../Component/Header/Header';
 import Footer from '../Component/Footer/Footer';
-import TutorialForm from '../Component/TutorialForm/TutorialForm';
 
-const AddTutorials = () => {
+const MyBookedTutors = () => {
     return (
         <>
             <Header></Header>
-            <TutorialForm></TutorialForm>
+            <div className='sec-gap'></div>
             <Footer></Footer>
         </>
     );
 };
 
-export default AddTutorials;
+export default MyBookedTutors;

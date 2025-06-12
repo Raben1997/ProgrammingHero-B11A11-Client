@@ -4,6 +4,8 @@ import Header from '../Component/Header/Header';
 import Footer from '../Component/Footer/Footer';
 // import { authContext } from '../Provider/AuthProvider';
 import Banner from '../Component/Banner/Banner';
+import Counter from '../Component/Counter/Counter';
+import TotalLanguages from '../Component/TotalLanguages/TotalLanguages';
 
 const Home = () => {
     // const a = useContext(authContext);
@@ -12,6 +14,8 @@ const Home = () => {
         <>
             <Header></Header>
             <Banner></Banner>
+            <Counter></Counter>
+            <TotalLanguages></TotalLanguages>
             <Footer></Footer>
         </>
     );

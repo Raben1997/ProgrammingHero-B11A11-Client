@@ -78,7 +78,7 @@ const LoginForm = () => {
                                 <label className="label text-[var(--orange)]">Password</label>
                                 <input type="password" className="input w-full bg-[var(--orange_bg)] text-[var(--blue)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Password" name='password' />
                                 <div><a className="link link-hover text-[var(--orange)]">Forgot password?</a></div>
-                                <button type='submit' className="btn mt-4 bg-[var(--orange)] hover:bg-[var(--blue)] text-[var(--dark_light)] rounded-full">Login</button>
+                                <button type='submit' className="btn mt-4 bg-[var(--orange)] hover:bg-[var(--blue)] text-[var(--dark_light)] rounded-full w-full">Login</button>
                             </form>
 
                             <div className="divider text-[var(--blue)] font-bold">OR</div>
