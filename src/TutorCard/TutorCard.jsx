@@ -17,6 +17,7 @@ const TutorCard = ({ tutorial }) => {
                         <span className='block'>Price : {price}</span>
                         <span className='block'>Reviews : {review}</span>
                         <span className='block'>Description : {description}</span>
+                        <button className='btn mt-4 bg-[var(--orange)] hover:bg-[var(--blue)] text-[var(--dark_light)] rounded-full'>Show Details</button>
                     </div>
                 </div>
             </Link>
