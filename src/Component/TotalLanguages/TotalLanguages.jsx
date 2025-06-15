@@ -5,107 +5,97 @@ import { Link, useNavigate } from 'react-router';
 
 const TotalLanguages = () => {
 
+
     let navigate = useNavigate();
-    const handleLanguages = () => {
-        navigate("/findtutors");
-        
+    const handleLanguages = (lang) => {
+        navigate(`/findtutors/${lang}`);
     }
 
     return (
         <div className='sec-gap'>
             <div className="container">
                 <div className='flex flex-wrap border border-[var(--blue)] p-4 md:p-8 rounded-2xl gap-4'>
-                    <div onClick={() => handleLanguages()} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("english")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>English Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("hindi")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Hindi Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("bengali")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Bengali Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("spanish")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Spanish Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("french")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>French Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("german")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>German Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("chinese")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Chinese Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("japanese")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Japanese Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-                    <div className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
+                    <div onClick={() => handleLanguages("arabic")} className='bg-[var(--blue_bg)] p-3 rounded-2xl w-full sm:w-[48%] lg:w-[32%] flex justify-between items-center cursor-pointer'>
                         <div>
                             <IoLanguageSharp className='mb-4' size={40} />
                             <h4>Arabic Tutor</h4>
-                            <p className='!p-0'>100 Teachers</p>
                         </div>
                         <div className='pl-3'>
                             <FaArrowRight size={30} className='text-[var(--orange)]' />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

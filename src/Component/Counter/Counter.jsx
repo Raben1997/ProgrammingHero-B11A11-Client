@@ -23,10 +23,6 @@ const Counter = () => {
                 const uniqueTutors = Array.from(uniqueEmailMap.values());
                 setTutors(uniqueTutors.length);
 
-
-
-
-
                 const totalLikes = data.reduce((sum, item) => sum + (item.like || 0), 0);
                 setReviews(totalLikes);
 

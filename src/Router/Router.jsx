@@ -10,6 +10,8 @@ import FindTutors from "../Pages/FindTutors";
 import MyTutorials from "../Pages/MyTutorials";
 import MyBookedTutors from "../Pages/MyBookedTutors";
 import UpdateTutorial from "../Component/UpdateTutorial/UpdateTutorial";
+import LanguageFilter from "../Component/LanguageFilter/LanguageFilter";
+import TutorDetails from "../Component/TutorDetails/TutorDetails";
 
 
 
@@ -26,6 +28,15 @@ export const router = createBrowserRouter([
             {
                 path: '/findtutors',
                 element: <FindTutors></FindTutors>
+            },
+            {
+                path: '/findtutors/:language',
+                element: <LanguageFilter></LanguageFilter>
+            },
+            {
+                path: '/tutordetails/:id',
+                element: <TutorDetails></TutorDetails>,
+                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`)
             },
             {
                 path: '/addtutorials',
