@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 
 const Counter = () => {
+
+
+    const [tutors, setTutors] = useState(0);
+    const [reviews, setReviews] = useState(0);
+    const [totalLanguages, setTotalLanguages] = useState(0);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/mytutorials?role=tutor")
+            .then(res => res.json())
+            .then(data => {
+
+                const tutorData = data.filter(item => item.role === "tutor");
+                const uniqueEmailMap = new Map();
+                tutorData.forEach(item => {
+                    if (!uniqueEmailMap.has(item.email)) {
+                        uniqueEmailMap.set(item.email, item);
+                    }
+                });
+                const uniqueTutors = Array.from(uniqueEmailMap.values());
+                setTutors(uniqueTutors.length);
+
+
+
+
+
+                const totalLikes = data.reduce((sum, item) => sum + (item.like || 0), 0);
+                setReviews(totalLikes);
+
+                const languageSet = new Set(
+                    data.map(item => item.language?.toLowerCase().trim())
+                );
+                setTotalLanguages(languageSet.size);
+            });
+
+    }, []);
+
     return (
         <div className='sec-gap bg-[var(--blue)]'>
             <div className='container'>
@@ -9,7 +45,7 @@ const Counter = () => {
                     <div className='text-center'>
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--dark_light)]'><CountUp
                             start={"0"}
-                            end={"100"}
+                            end={tutors}
                             duration={2.75}
                         ></CountUp></strong>
                         <h4 className='text-[var(--dark_light)]'>Tutors Counts</h4>
@@ -17,7 +53,7 @@ const Counter = () => {
                     <div className='text-center'>
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--dark_light)]'><CountUp
                             start={"0"}
-                            end={"100"}
+                            end={reviews}
                             duration={2.75}
                         ></CountUp></strong>
                         <h4 className='text-[var(--dark_light)]'>Review Counts</h4>
@@ -25,7 +61,7 @@ const Counter = () => {
                     <div className='text-center'>
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--dark_light)]'><CountUp
                             start={"0"}
-                            end={"100"}
+                            end={totalLanguages}
                             duration={2.75}
                         ></CountUp></strong>
                         <h4 className='text-[var(--dark_light)]'>Languages Count</h4>
@@ -33,7 +69,7 @@ const Counter = () => {
                     <div className='text-center'>
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--dark_light)]'><CountUp
                             start={"0"}
-                            end={"100"}
+                            end={100}
                             duration={2.75}
                         ></CountUp></strong>
                         <h4 className='text-[var(--dark_light)]'>User's Counts</h4>

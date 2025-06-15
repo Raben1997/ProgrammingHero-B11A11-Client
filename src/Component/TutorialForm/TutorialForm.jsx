@@ -9,12 +9,23 @@ const TutorialForm = () => {
     const { user } = useContext(authContextData);
     const navigate = useNavigate();
 
+
+
     const handleAddTutorial = e => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const addTutorialFormData = Object.fromEntries(formData.entries());
+        if (addTutorialFormData.language) {
+            addTutorialFormData.language = addTutorialFormData.language.toLowerCase();
+        }
         const addTutorialData = { ...addTutorialFormData, review: 0, role: "tutor" }
+
+        // const lowerCaseFormData = {};
+        // for (let [key, value] of formData.entries()) {
+        //     lowerCaseFormData[key] = value.toLowerCase();
+        // }
+        // const addTutorialData = { ...lowerCaseFormData, review: 0, role: "tutor" }
 
         // console.log(addTutorialData, user.displayName);
 
@@ -32,11 +43,11 @@ const TutorialForm = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         icon: "success",
-                        title: "Roommate Added successfully!",
+                        title: "Tutorial Added successfully!",
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    // navigate("/my_listings");
+                    navigate("/mytutorials");
                 }
             })
 
