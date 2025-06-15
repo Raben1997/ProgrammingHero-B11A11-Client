@@ -23,8 +23,8 @@ const Counter = () => {
                 const uniqueTutors = Array.from(uniqueEmailMap.values());
                 setTutors(uniqueTutors.length);
 
-                const totalLikes = data.reduce((sum, item) => sum + (item.like || 0), 0);
-                setReviews(totalLikes);
+                const totalReview = data.reduce((sum, item) => sum + (item.review || 0), 0);
+                setReviews(totalReview);
 
                 const languageSet = new Set(
                     data.map(item => item.language?.toLowerCase().trim())

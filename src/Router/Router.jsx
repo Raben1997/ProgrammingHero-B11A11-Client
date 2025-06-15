@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/findtutors',
-                element: <FindTutors></FindTutors>
+                element: <FindTutors></FindTutors>,
             },
             {
                 path: '/findtutors/:language',
