@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [themeMode, setThemeMode] = useState(true);
 
 
 
@@ -67,7 +68,9 @@ const AuthProvider = ({ children }) => {
         handleSignInWithGoogle,
         handleSignOut,
         user,
-        setUser
+        setUser,
+        themeMode,
+        setThemeMode
     }
 
     useEffect(() => {

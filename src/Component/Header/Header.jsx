@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router';
 import MenuLinks from '../MenuLinks/MenuLinks';
 import { CiLight } from 'react-icons/ci';
@@ -12,12 +12,12 @@ import Swal from 'sweetalert2';
 
 const Header = () => {
 
-    const [darkMode, setDarkMode] = useState(false);
-    const { user, setUser, handleSignOut } = useContext(authContextData);
+
+    const { user, setUser, handleSignOut, setThemeMode, themeMode } = useContext(authContextData);
 
     const navigate = useNavigate();
 
-    // console.log(user);
+
 
 
     const handleLogout = () => {
@@ -43,16 +43,8 @@ const Header = () => {
     }
 
     const handleThemeMod = () => {
-        setDarkMode(!darkMode)
+        setThemeMode(!themeMode)
     }
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-            document.documentElement.setAttribute("data-theme", "light");
-        }
-    }, [darkMode]);
 
 
     return (
@@ -70,7 +62,7 @@ const Header = () => {
                         </div>
                         <div className="navbar-end flex gap-2">
                             <button onClick={handleThemeMod} className="bg-[var(--orange)] w-10 h-10 rounded-full border-0 shadow-none flex justify-center items-center cursor-pointer">
-                                {darkMode ? <CiLight className="text-2xl text-[var(--dark_light)]" /> : <MdNightlight className="text-xl text-[var(--dark_light)]" />}
+                                {themeMode ? <CiLight className="text-2xl text-[var(--dark_light)]" /> : <MdNightlight className="text-xl text-[var(--dark_light)]" />}
                             </button>
                             {
                                 user ? <>
@@ -91,7 +83,7 @@ const Header = () => {
                                         </ul>
                                     </div>
                                 </> : <>
-                                    <Link className='md:py-2 md:px-6 max-md:w-10 max-md:h-10 max-md:rounded-full bg-[var(--orange)] rounded-4xl font-bold text-[var(--dark_light)] cursor-pointer text-sm sm:text-base leading-relaxed max-md:flex max-md:justify-center max-md:items-center' to={"/login"}><TbLogin2  className='inline-block md:mr-2 text-xl' /><span className='max-md:hidden'>Login</span></Link>
+                                    <Link className='md:py-2 md:px-6 max-md:w-10 max-md:h-10 max-md:rounded-full bg-[var(--orange)] rounded-4xl font-bold text-[var(--dark_light)] cursor-pointer text-sm sm:text-base leading-relaxed max-md:flex max-md:justify-center max-md:items-center' to={"/login"}><TbLogin2 className='inline-block md:mr-2 text-xl' /><span className='max-md:hidden'>Login</span></Link>
                                 </>
                             }
                             <div className="dropdown dropdown-end">

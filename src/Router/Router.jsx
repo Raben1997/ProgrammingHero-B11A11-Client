@@ -12,6 +12,7 @@ import MyBookedTutors from "../Pages/MyBookedTutors";
 import UpdateTutorial from "../Component/UpdateTutorial/UpdateTutorial";
 import LanguageFilter from "../Component/LanguageFilter/LanguageFilter";
 import TutorDetails from "../Component/TutorDetails/TutorDetails";
+import Loading from "../Component/Loading/Loading";
 
 
 
@@ -35,8 +36,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/tutordetails/:id',
-                element: <TutorDetails></TutorDetails>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`)
+                element: <PrivateRouter><TutorDetails></TutorDetails></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/addtutorials',
@@ -49,7 +51,8 @@ export const router = createBrowserRouter([
             {
                 path: '/updatetutorial/:id',
                 element: <UpdateTutorial></UpdateTutorial>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/mybookedtutors',

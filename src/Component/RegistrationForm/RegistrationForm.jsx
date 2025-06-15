@@ -20,7 +20,7 @@ const RegistrationForm = () => {
 
         handleUserSignUp(name, email, photourl, password)
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 updateProfile(auth.currentUser, {
                     displayName: name,
                     photoURL: photourl
@@ -33,6 +33,23 @@ const RegistrationForm = () => {
                         timer: 1500
                     });
                     navigate("/");
+
+                    const newUser = {
+                        email: email,
+                        displayName: name,
+                        photoURL: photourl,
+                    };
+
+                    fetch("http://localhost:3000/users", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(newUser)
+                    })
+
+
+
                 }).catch(() => {
                     Swal.fire({
                         icon: "error",
@@ -42,9 +59,14 @@ const RegistrationForm = () => {
                     });
                 });
             })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
+            .catch(() => {
+                // const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Failed to create account.",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             });
 
 

@@ -48,6 +48,33 @@ const LoginForm = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+
+                const loggedUser = result.user;
+
+                fetch("http://localhost:3000/users", {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: loggedUser.email,
+                        displayName: loggedUser.displayName,
+                        photoURL: loggedUser.photoURL,
+                    }),
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        setUser(loggedUser);
+                        navigate("/");
+                        Swal.fire({
+                            icon: "success",
+                            title: `${loggedUser.displayName || "User"} — Logged in successfully!`,
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    });
+
+
             }).catch((error) => {
                 console.log(error.message);
                 Swal.fire({

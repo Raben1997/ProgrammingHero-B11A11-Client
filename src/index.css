@@ -41,14 +41,14 @@ p {
 .p-gap {
   @apply pb-2 md:pb-3;
 }
-html[data-theme="light"]:root {
+.rootDiv[data-theme="light"] {
   --blue: #193cb8;
   --blue_bg: #e8ecfc;
   --orange: #ff6900;
   --orange_bg: #fef3ec;
   --dark_light: #ffffff;
 }
-html[data-theme="dark"]:root {
+.rootDiv[data-theme="dark"] {
   --blue: #1d232a;
   --blue_bg: #eae9fc0d;
   --orange_bg: #eae9fc0d;
