@@ -1,12 +1,66 @@
-# React + Vite
+# 🎓 Tutor Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack online tutor booking application where students can explore available tutors, book them based on preferred language and skillset, and leave reviews. Built using the MERN stack.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Website
 
-## Expanding the ESLint configuration
+👉 [Visit Live Site](https://your-live-url.netlify.app)  
+_Replace this with your actual deployed URL_
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Project Purpose
+
+This project allows students to:
+- Find language tutors
+- View tutor details and reviews
+- Book tutors for sessions
+- Leave feedback/reviews after sessions
+
+Tutors can:
+- Register and add their profile
+- Manage bookings
+- Track review count and status
+
+---
+
+## 🚀 Key Features
+
+- 🔐 User Authentication (Firebase Auth)
+- 🧑 Role-based registration (Student / Tutor)
+- 🌍 Filter tutors by language
+- 📚 Booking system with booking status
+- ⭐ Reviews
+- 🎨 Responsive and styled with custom CSS & Tailwind
+- ⚙️ User dashboards
+
+---
+
+## 🧰 Technologies Used
+
+### 🔧 Frontend
+
+- React.js
+- React Router
+- Firebase Authentication
+- Tailwind CSS
+- SweetAlert2
+
+### 🔧 Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- CORS
+- Dotenv
+
+---
+
+## 📦 NPM Packages Used
+
+### Frontend
+
+```bash
+npm install react react-router firebase sweetalert2 react-countup react-icons tailwindcss

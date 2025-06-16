@@ -10,7 +10,12 @@ const Counter = () => {
     const [totalUsers, setTotalUsers] = useState(0);
 
     useEffect(() => {
-        fetch("http://localhost:3000/mytutorials?role=tutor")
+        const token = localStorage.getItem('token');
+        fetch("http://localhost:3000/mytutorialshome?role=tutor", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
             .then(res => res.json())
             .then(data => {
 
@@ -36,7 +41,12 @@ const Counter = () => {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:3000/users")
+        const token = localStorage.getItem('token');
+        fetch("http://localhost:3000/users", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
             .then(res => res.json())
             .then(data => {
                 setTotalUsers(data.length);

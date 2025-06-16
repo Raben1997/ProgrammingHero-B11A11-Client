@@ -10,8 +10,13 @@ const MyBookedTutors = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
         if (user?.email) {
-            fetch(`http://localhost:3000/mytutorials?bookedBy=${user.email}`)
+            fetch(`http://localhost:3000/mytutorials?bookedBy=${user.email}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);

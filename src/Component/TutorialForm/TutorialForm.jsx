@@ -77,13 +77,13 @@ const TutorialForm = () => {
                             <label className="label text-[var(--orange)]">Email</label>
                             <input type="email" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Email" name='email' value={user.email} readOnly />
                             <label className="label text-[var(--orange)]">Image URL</label>
-                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Image URL" name='imageurl' />
+                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Image URL" name='imageurl' required />
                             <label className="label text-[var(--orange)]">Language</label>
-                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Language" name='language' />
+                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Language" name='language' required/>
                             <label className="label text-[var(--orange)]">Price</label>
-                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Price" name='price' />
+                            <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Price" name='price' required/>
                             <label className="label text-[var(--orange)]">Description</label>
-                            <textarea type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-xl h-24 py-2" placeholder="Description" name='description' ></textarea>
+                            <textarea type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-xl h-24 py-2" placeholder="Description" name='description' required></textarea>
                             <button type='submit' className="btn mt-4 bg-[var(--orange)] hover:bg-[var(--blue)] text-[var(--dark_light)] rounded-full">Add Tutorial</button>
                         </form>
                     </div>

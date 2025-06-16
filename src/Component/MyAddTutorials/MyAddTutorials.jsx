@@ -12,8 +12,13 @@ const MyAddTutorials = () => {
 
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
         if (user?.email) {
-            fetch(`http://localhost:3000/mytutorials?email=${user.email}`)
+            fetch(`http://localhost:3000/mytutorials?email=${user.email}`,{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
                 .then(res => res.json())
                 .then(data => {
                     setMyTutorials(data);

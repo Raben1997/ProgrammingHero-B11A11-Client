@@ -12,6 +12,8 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [themeMode, setThemeMode] = useState(true);
+    const [language, setLanguage] = useState("");
+    // console.log(language);
 
 
 
@@ -57,6 +59,7 @@ const AuthProvider = ({ children }) => {
 
 
     const handleSignOut = () => {
+        localStorage.removeItem('token')
         return signOut(auth);
     }
 
@@ -70,19 +73,42 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         themeMode,
-        setThemeMode
+        setThemeMode,
+        language,
+        setLanguage
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+
+            // jwt - json web token
+
+            if (currentUser?.email) {
+                fetch("http://localhost:3000/jwt", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: currentUser.email, role: 'tutor', language })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('token', data.token)
+                    })
+            } else {
+                localStorage.removeItem('token')
+            }
+
+
+
             setLoading(false);
         });
 
         return () => {
             unsubscribe();
         }
-    }, [])
+    }, [language])
 
     if (loading) {
         return <Loading></Loading>;

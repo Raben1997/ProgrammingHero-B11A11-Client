@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { IoLanguageSharp } from 'react-icons/io5';
 import { Link, useNavigate } from 'react-router';
+import { authContextData } from '../../Provider/AuthProvider';
 
 const TotalLanguages = () => {
 
+    const { setLanguage } = useContext(authContextData);
 
     let navigate = useNavigate();
     const handleLanguages = (lang) => {
+        setLanguage(lang);
         navigate(`/findtutors/${lang}`);
     }
 

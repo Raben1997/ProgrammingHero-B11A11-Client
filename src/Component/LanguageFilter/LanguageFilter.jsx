@@ -9,8 +9,14 @@ const LanguageFilter = () => {
     const [languages, setLanguages] = useState([])
 
 
+
     useEffect(() => {
-        fetch(`http://localhost:3000/mytutorials?language=${language}`)
+        const token = localStorage.getItem('token');
+        fetch(`http://localhost:3000/mytutorialshome?language=${language}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
             .then(res => res.json())
             .then(data => {
                 setLanguages(data);
