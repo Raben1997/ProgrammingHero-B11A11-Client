@@ -3,7 +3,6 @@ import CountUp from 'react-countup';
 
 const Counter = () => {
 
-
     const [tutors, setTutors] = useState(0);
     const [reviews, setReviews] = useState(0);
     const [totalLanguages, setTotalLanguages] = useState(0);
