@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
             {
                 path: '/tutordetails/:id',
                 element: <PrivateRouter><TutorDetails></TutorDetails></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`),
+                loader: ({ params }) => fetch(`https://tutor-booking-server-five.vercel.app/tutorials/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>
             },
             {
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             {
                 path: '/updatetutorial/:id',
                 element: <UpdateTutorial></UpdateTutorial>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutorials/${params.id}`),
+                loader: ({ params }) => fetch(`https://tutor-booking-server-five.vercel.app/tutorials/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>
             },
             {

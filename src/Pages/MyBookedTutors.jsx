@@ -3,16 +3,17 @@ import Header from '../Component/Header/Header';
 import Footer from '../Component/Footer/Footer';
 import { authContextData } from '../Provider/AuthProvider';
 import TutorCard from '../TutorCard/TutorCard';
+import Loading from '../Component/Loading/Loading';
 
 const MyBookedTutors = () => {
 
-    const { user } = useContext(authContextData);
+    const { user, dataloading, setDataLoading } = useContext(authContextData);
     const [books, setBooks] = useState([])
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (user?.email) {
-            fetch(`http://localhost:3000/mytutorials?bookedBy=${user.email}`, {
+            fetch(`https://tutor-booking-server-five.vercel.app/mytutorials?bookedBy=${user.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -20,6 +21,7 @@ const MyBookedTutors = () => {
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);
+                    setDataLoading(false);
                 });
         }
     }, [user?.email]);
@@ -35,7 +37,17 @@ const MyBookedTutors = () => {
                     <h2 class="text-[var(--orange)]">My Booked Tutor</h2>
                     <div className='grid gap-5'>
                         {
-                            books.map(tutorial => <TutorCard key={tutorial._id} tutorial={tutorial}></TutorCard>)
+                            dataloading ? (
+                                <Loading />
+                            ) : books.length > 0 ? (
+                                books.map(tutorial => (
+                                    <TutorCard key={tutorial._id} tutorial={tutorial} />
+                                ))
+                            ) : (
+                                <div className="text-center py-10">
+                                    <p className="text-[var(--orange)] text-lg">You haven’t booked any tutors yet.</p>
+                                </div>
+                            )
                         }
                     </div>
                 </div>

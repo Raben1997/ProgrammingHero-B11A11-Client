@@ -13,6 +13,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [themeMode, setThemeMode] = useState(true);
     const [language, setLanguage] = useState("");
+    const [dataloading, setDataLoading] = useState(true);
     // console.log(language);
 
 
@@ -75,7 +76,11 @@ const AuthProvider = ({ children }) => {
         themeMode,
         setThemeMode,
         language,
-        setLanguage
+        setLanguage,
+        loading,
+        setLoading,
+        dataloading,
+        setDataLoading
     }
 
     useEffect(() => {
@@ -85,7 +90,7 @@ const AuthProvider = ({ children }) => {
             // jwt - json web token
 
             if (currentUser?.email) {
-                fetch("http://localhost:3000/jwt", {
+                fetch("https://tutor-booking-server-five.vercel.app/jwt", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'

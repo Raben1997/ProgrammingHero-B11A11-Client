@@ -6,8 +6,8 @@ A full-stack online tutor booking application where students can explore availab
 
 ## 🌐 Live Website
 
-👉 [Visit Live Site](https://your-live-url.netlify.app)  
-_Replace this with your actual deployed URL_
+👉 [Visit Live Site](https://tutor-booking-client.web.app/)  
+
 
 ---
 
