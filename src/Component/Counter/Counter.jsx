@@ -57,7 +57,7 @@ const Counter = () => {
         <div className='sec-gap bg-[var(--orange_bg)]'>
             <div className='container'>
                 <div className='flex md:justify-between max-md:justify-center flex-wrap gap-5'>
-                    <div className='text-center'>
+                    <div className='text-center' data-aos="fade-up" data-aos-delay="50">
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--orange)]'><CountUp
                             start={"0"}
                             end={tutors}
@@ -65,7 +65,7 @@ const Counter = () => {
                         ></CountUp></strong>
                         <h4 >Tutors Counts</h4>
                     </div>
-                    <div className='text-center'>
+                    <div className='text-center' data-aos="fade-up" data-aos-delay="100">
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--orange)]'><CountUp
                             start={"0"}
                             end={reviews}
@@ -73,7 +73,7 @@ const Counter = () => {
                         ></CountUp></strong>
                         <h4 >Review Counts</h4>
                     </div>
-                    <div className='text-center'>
+                    <div className='text-center' data-aos="fade-up" data-aos-delay="150">
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--orange)]'><CountUp
                             start={"0"}
                             end={totalLanguages}
@@ -81,7 +81,7 @@ const Counter = () => {
                         ></CountUp></strong>
                         <h4 >Languages Count</h4>
                     </div>
-                    <div className='text-center'>
+                    <div className='text-center' data-aos="fade-up" data-aos-delay="200">
                         <strong className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-4 md:pb-5 lg:pb-6 text-[var(--orange)]'><CountUp
                             start={"0"}
                             end={totalUsers}
