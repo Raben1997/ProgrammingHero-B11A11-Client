@@ -40,7 +40,7 @@ const RegistrationForm = () => {
                         photoURL: photourl,
                     };
 
-                    fetch("http://localhost:3000/users", {
+                    fetch("https://tutor-booking-server-five.vercel.app/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

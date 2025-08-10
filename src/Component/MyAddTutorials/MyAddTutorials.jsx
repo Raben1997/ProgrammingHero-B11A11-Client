@@ -14,7 +14,7 @@ const MyAddTutorials = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (user?.email) {
-            fetch(`http://localhost:3000/mytutorials?email=${user.email}`,{
+            fetch(`https://tutor-booking-server-five.vercel.app/mytutorials?email=${user.email}`,{
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -41,7 +41,7 @@ const MyAddTutorials = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/tutorial/${id}`, {
+                fetch(`https://tutor-booking-server-five.vercel.app/tutorial/${id}`, {
                     'method': 'DELETE'
                 })
                     .then(res => res.json())
