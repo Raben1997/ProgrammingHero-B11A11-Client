@@ -32,14 +32,14 @@ const ContactForm = () => {
         <div className='sec-gap bg-[var(--orange_bg)]'>
             <div className='container'>
                 <div className='md:flex items-center justify-between md:gap-10'>
-                    <div className='w-5/12'>
+                    <div className='w-full md:w-5/12'>
                         <img
                             src={signupImage}
                             className="rounded-lg shadow-2xl w-full"
                         />
                     </div>
-                    <div className='w-7/12'>
-                        <form ref={form} onSubmit={handleContact} className="fieldset border border-[var(--orange)] rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
+                    <div className='w-full md:w-7/12 mt-5 md:mt-0'>
+                        <form ref={form} onSubmit={handleContact} className="fieldset border border-[var(--orange)] rounded-lg md:rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
                             <h2 className='text-[var(--orange)]'>Contact Form</h2>
                             <label className="label text-[var(--orange)]">Name</label>
                             <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--blue)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Name" name='name' required />

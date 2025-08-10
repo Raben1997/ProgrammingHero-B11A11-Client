@@ -92,14 +92,14 @@ const LoginForm = () => {
         <div className='sec-gap bg-[var(--orange_bg)]'>
             <div className='container'>
                 <div className='md:flex items-center justify-between md:gap-10'>
-                    <div className='w-5/12'>
+                    <div className='w-full md:w-5/12'>
                         <img
                             src={login}
-                            className="rounded-lg shadow-2xl w-full"
+                            className="rounded-lg shadow-2xl w-full object-cover"
                         />
                     </div>
-                    <div className='w-7/12'>
-                        <div className="fieldset border border-[var(--orange)] rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
+                    <div className='w-full md:w-7/12 mt-5 md:mt-0'>
+                        <div className="fieldset border border-[var(--orange)] rounded-lg md:rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
                             <form onSubmit={handleSignin}>
                                 <h2 className='text-[var(--orange)]'>Login Form</h2>
                                 <label className="label text-[var(--orange)]">Email</label>

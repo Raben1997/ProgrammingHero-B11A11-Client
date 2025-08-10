@@ -50,14 +50,14 @@ const UpdateTutorial = () => {
             <div className='sec-gap bg-[var(--orange_bg)]'>
                 <div className='container'>
                     <div className='md:flex items-center justify-between md:gap-10'>
-                        <div className='w-5/12'>
+                        <div className='w-full md:w-5/12'>
                             <img
                                 src={updateImg}
                                 className="rounded-lg shadow-2xl w-full"
                             />
                         </div>
-                        <div className='w-7/12'>
-                            <form onSubmit={handleUpdateTutorial} className="fieldset border border-[var(--orange)] rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
+                        <div className='w-full md:w-7/12 mt-5 md:mt-0'>
+                            <form onSubmit={handleUpdateTutorial} className="fieldset border border-[var(--orange)] rounded-lg md:rounded-4xl p-4 md:p-6 lg:p-12 bg-[var(--blue_bg)]">
                                 <h2 className='text-[var(--orange)]'>Update Tutorial</h2>
                                 <label className="label text-[var(--orange)]">Name</label>
                                 <input type="text" className="input w-full bg-[var(--orange_bg)] text-[var(--orange)] !outline-0 border-[var(--orange)]  rounded-full" placeholder="Name" name='name' value={user.displayName} readOnly />
