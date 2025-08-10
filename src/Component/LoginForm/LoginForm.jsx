@@ -51,7 +51,7 @@ const LoginForm = () => {
 
                 const loggedUser = result.user;
 
-                fetch("https://tutor-booking-server-five.vercel.app/users", {
+                fetch("http://localhost:3000/users", {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",

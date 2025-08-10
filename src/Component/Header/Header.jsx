@@ -49,7 +49,7 @@ const Header = () => {
 
     return (
         <>
-            <header className='bg-[var(--blue)]'>
+            <header className='bg-[var(--blue)] sticky top-0 z-50'>
                 <div className="container">
                     <div className="navbar !p-0">
                         <div className="navbar-start">

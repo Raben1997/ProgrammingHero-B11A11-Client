@@ -31,7 +31,7 @@ const TutorialForm = () => {
 
 
 
-        fetch("https://tutor-booking-server-five.vercel.app/tutorials", {
+        fetch("http://localhost:3000/tutorials", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

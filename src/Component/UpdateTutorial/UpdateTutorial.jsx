@@ -21,7 +21,7 @@ const UpdateTutorial = () => {
             addTutorialFormData.language = addTutorialFormData.language.toLowerCase();
         }
 
-        fetch(`https://tutor-booking-server-five.vercel.app/tutorial/${_id}`, {
+        fetch(`http://localhost:3000/tutorial/${_id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

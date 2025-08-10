@@ -18,7 +18,7 @@ const TutorDetails = () => {
 
 
     const handleReviewCount = () => {
-        fetch(`https://tutor-booking-server-five.vercel.app/tutorial/review/${tutorDetails._id}`, {
+        fetch(`http://localhost:3000/tutorial/review/${tutorDetails._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -32,7 +32,7 @@ const TutorDetails = () => {
     }
 
     const handleBook = (tutorialId, email) => {
-        fetch(`https://tutor-booking-server-five.vercel.app/tutorials/${tutorialId}`, {
+        fetch(`http://localhost:3000/tutorials/${tutorialId}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

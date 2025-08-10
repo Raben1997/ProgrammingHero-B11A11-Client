@@ -90,7 +90,7 @@ const AuthProvider = ({ children }) => {
             // jwt - json web token
 
             if (currentUser?.email) {
-                fetch("https://tutor-booking-server-five.vercel.app/jwt", {
+                fetch("http://localhost:3000/jwt", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'

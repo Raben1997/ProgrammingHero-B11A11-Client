@@ -10,7 +10,7 @@ const Counter = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch("https://tutor-booking-server-five.vercel.app/mytutorialshome?role=tutor", {
+        fetch("http://localhost:3000/mytutorialshome?role=tutor", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -41,7 +41,7 @@ const Counter = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch("https://tutor-booking-server-five.vercel.app/users", {
+        fetch("http://localhost:3000/users", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

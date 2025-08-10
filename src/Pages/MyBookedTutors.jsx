@@ -13,7 +13,7 @@ const MyBookedTutors = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (user?.email) {
-            fetch(`https://tutor-booking-server-five.vercel.app/mytutorials?bookedBy=${user.email}`, {
+            fetch(`http://localhost:3000/mytutorials?bookedBy=${user.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

@@ -11,7 +11,7 @@ const AllTutors = () => {
 
 
     useEffect(() => {
-        fetch(`https://tutor-booking-server-five.vercel.app/tutorials`)
+        fetch(`http://localhost:3000/tutorials`)
             .then(res => res.json())
             .then(data => {
                 setLanguages(data);
