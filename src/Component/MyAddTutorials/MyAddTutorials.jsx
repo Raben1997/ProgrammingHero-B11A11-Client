@@ -84,7 +84,7 @@ const MyAddTutorials = () => {
                             {
                                 myTutorials.map((myTutorial, index) => {
                                     return (
-                                        <tr key={myTutorial._id}>
+                                        <tr key={myTutorial._id}  data-aos="fade-up" data-aos-delay={index * 100}>
                                             <th>{index + 1}</th>
                                             <td>
                                                 <img

@@ -36,7 +36,7 @@ const LanguageFilter = () => {
                             languages.length === 0 ? (
                                 <h2 className="text-[var(--orange)]">No tutor found for this language.</h2>
                             ) :
-                                <div className='grid gap-5'>
+                                <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-5'>
                                     {
                                         languages.map(language => <TutorCard key={language._id} tutorial={language}></TutorCard>)
                                     }

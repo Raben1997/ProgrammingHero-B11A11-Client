@@ -13,6 +13,7 @@ import UpdateTutorial from "../Component/UpdateTutorial/UpdateTutorial";
 import LanguageFilter from "../Component/LanguageFilter/LanguageFilter";
 import TutorDetails from "../Component/TutorDetails/TutorDetails";
 import Loading from "../Component/Loading/Loading";
+import Contact from "../Pages/Contact";
 
 
 
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             }
         ]
     },

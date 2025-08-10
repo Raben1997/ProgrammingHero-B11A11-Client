@@ -22,6 +22,7 @@ const MenuLinks = ({ isFooter }) => {
         {
             user && <NavLink className={isFooter ? "link link-hover text-[var(--dark_light)]" : "p-2 !bg-transparent text-[var(--dark_light)] hover:text-[var(--orange)]"} to="/mybookedtutors">My Booked Tutors</NavLink>
         }
+        <NavLink className={isFooter ? "link link-hover text-[var(--dark_light)]" : "p-2 !bg-transparent text-[var(--dark_light)] hover:text-[var(--orange)]"} to="/contact">Contact</NavLink>
     </>;
 
     return (

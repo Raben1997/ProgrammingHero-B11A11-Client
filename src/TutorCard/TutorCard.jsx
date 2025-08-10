@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const TutorCard = ({ tutorial }) => {
+const TutorCard = ({ tutorial  }) => {
     const { imageurl, name, language: lang, price, description, _id } = tutorial;
-    // console.log(tutorial);
     return (
         <>
             <Link to={`/tutordetails/${_id}`}>
-                <div className='rounded-2xl bg-[var(--blue_bg)] shadow-2xl'>
+                <div className='rounded-2xl bg-[var(--blue_bg)] shadow-2xl' data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <img src={imageurl} alt="" className='rounded-t-2xl w-full object-cover h-[200px]' />
                     </div>
