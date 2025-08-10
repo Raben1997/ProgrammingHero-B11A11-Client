@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate, useLocation } from 'react-router';
 import login from '../../assets/images/login.jpg'
 import { authContextData } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
@@ -8,6 +8,9 @@ const LoginForm = () => {
 
     const { handleSignIn, setUser, handleSignInWithGoogle } = useContext(authContextData);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    // console.log(from);
 
     const handleSignin = e => {
         e.preventDefault();
@@ -18,7 +21,7 @@ const LoginForm = () => {
         handleSignIn(email, password)
             .then((result) => {
                 setUser(result.user);
-                navigate("/");
+                navigate(from, { replace: true });
                 Swal.fire({
                     icon: "success",
                     title: `${result.user.displayName || "User"} — Logged in successfully!`,
@@ -41,7 +44,6 @@ const LoginForm = () => {
         handleSignInWithGoogle()
             .then((result) => {
                 setUser(result.user);
-                navigate("/");
                 Swal.fire({
                     icon: "success",
                     title: `${result.user.displayName || "User"} — Logged in successfully!`,
@@ -65,7 +67,7 @@ const LoginForm = () => {
                     .then(res => res.json())
                     .then(() => {
                         setUser(loggedUser);
-                        navigate("/");
+                        navigate(from, { replace: true });
                         Swal.fire({
                             icon: "success",
                             title: `${loggedUser.displayName || "User"} — Logged in successfully!`,

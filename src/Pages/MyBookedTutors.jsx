@@ -35,7 +35,7 @@ const MyBookedTutors = () => {
             <div className='sec-gap bg-[var(--orange_bg)]'>
                 <div className="container">
                     <h2 class="text-[var(--orange)]">My Booked Tutor</h2>
-                    <div className='grid gap-5'>
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-5'>
                         {
                             dataloading ? (
                                 <Loading />
